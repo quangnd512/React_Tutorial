@@ -20,7 +20,7 @@ const App = () => { // Arrow function
           Learn React
         </a>
 
-        <MyComponent/> {/*Component*/}
+        <MyComponent /> {/*Component*/}
       </header>
     </div>
   );

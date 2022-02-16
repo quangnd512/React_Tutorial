@@ -1,0 +1,22 @@
+import React from "react";
+
+class MyComponent extends React.Component() {
+    render() {
+
+        // JSX
+        let name = 'AHT';
+
+        return (
+            //Sử dụng thẻ ẩn bao quanh 2 thẻ chính
+            <
+            > { /* call jsx */ } <
+            div className = "first" > Hello { name } < /div> <
+            div className = "secord" > { name }
+            JSC < /div> <
+            />
+        )
+    }
+}
+
+// Sử 
+export default MyComponent;

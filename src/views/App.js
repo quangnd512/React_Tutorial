@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.scss';
-import MyComponent from './Exxample/MyComponent';
+import MyComponent from './Example/MyComponent';
 
 // function App() { //function
 const App = () => { // Arrow function  
