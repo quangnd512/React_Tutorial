@@ -1,4 +1,5 @@
 import React from "react";
+import ChildComponent from "./ChildComponent";
 
 class InputLogin extends React.Component {
 
@@ -38,6 +39,8 @@ class InputLogin extends React.Component {
                 {/* submit event */}
                 <input type="submit" value="Submit" onClick={(event) => this.onSubmitName(event)}/>
             <form/>
+
+            <ChildComponent />
             </>
         )
     }
