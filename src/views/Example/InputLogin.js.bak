@@ -52,7 +52,7 @@ class InputLogin extends React.Component {
             //Pros
             name = {this.state.fname}
             age = {'25'}
-            Job = {this.state.arrayJob}
+            
             />
             </>
         )

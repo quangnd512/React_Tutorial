@@ -15,9 +15,6 @@ class ChildComponent extends React.Component {
                     {
                         Job.map(( item, index )=>{
                             return (
-
-                                // Key giúp react xác định xem đối tượng nào đã được thay đổi và cập nhật nó thay vì
-                                // phải cập nhật cả một mảng
                                 <div key={item.id}>
                                     {item.title} - {item.salary}
                                 </div>
