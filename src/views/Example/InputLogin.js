@@ -1,5 +1,6 @@
 import React from "react";
 import ChildComponent from "./ChildComponent";
+import ChildLoopComponent from "./ChildLoopComponent";
 
 class InputLogin extends React.Component {
 
@@ -10,9 +11,9 @@ class InputLogin extends React.Component {
 
         // Outputting Lists
         arrayJob: [
-            {id: 1, title: 'developer', salary: '500$'},
-            {id: 2, title: 'tester', salary: '200$'},
-            {id: 3, title: 'BA', salary: '1000$'}
+            {id: 1, title: 'developer', salary: '500'},
+            {id: 2, title: 'tester', salary: '200'},
+            {id: 3, title: 'BA', salary: '1000'}
         ]
     }
 
@@ -47,13 +48,17 @@ class InputLogin extends React.Component {
                 <input type="submit" value="Submit" onClick={(event) => this.onSubmitName(event)}/>
             <form/>
 
-            <ChildComponent 
+            {/* <ChildComponent 
 
             //Pros
             name = {this.state.fname}
             age = {'25'}
             Job = {this.state.arrayJob}
-            />
+            /> */}
+			
+			<ChildLoopComponent
+			Job = {this.state.arrayJob}
+			/>
             </>
         )
     }
