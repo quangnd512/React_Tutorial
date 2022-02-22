@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.scss';
 import MyComponent from './Example/MyComponent';
-import InputLogin from './Example/InputLogin';
 
 // function App() { //function
 const App = () => { // Arrow function  
@@ -13,8 +12,7 @@ const App = () => { // Arrow function
           Edit <code>src/App.js</code> and save to reload.
         </p>
         {/*Component*/}
-        {/*<MyComponent />*/}
-         <InputLogin />
+        <MyComponent />
       </header>
     </div>
   );

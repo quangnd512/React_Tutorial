@@ -1,20 +1,13 @@
 import React from "react";
 import ChildComponent from "./ChildComponent";
-import ChildLoopComponent from "./ChildLoopComponent";
+import ChildLoopComponent from "./ListJob";
 
 class InputLogin extends React.Component {
 
     // state
     state = {
         fname: '',
-        lname: '',
-
-        // Outputting Lists
-        arrayJob: [
-            {id: 1, title: 'developer', salary: '500'},
-            {id: 2, title: 'tester', salary: '200'},
-            {id: 3, title: 'BA', salary: '1000'}
-        ]
+        lname: ''
     }
 
     // event 
@@ -32,7 +25,23 @@ class InputLogin extends React.Component {
 
     onSubmitName = (event) => {
         event.preventDefault() // Hàm preventDefault() giúp không tải lại trang
+        
+        if(!this.state.fname || this.state.lname) {
+            alert('Thieu cu phap');
+            return;
+        }
         console.log('First name: ', this.state.fname,' Last name: ', this.state.lname);
+        
+        this.props.addNewJob({
+            id: Math.floor(Math.random() * 1001),
+            title: this.state.fname,
+            salary: this.state.lname
+        })
+
+        this.setState({
+            fname: '',
+            lname: ''
+        })
     }
 
     render(){
@@ -48,17 +57,13 @@ class InputLogin extends React.Component {
                 <input type="submit" value="Submit" onClick={(event) => this.onSubmitName(event)}/>
             <form/>
 
-            <ChildComponent 
+            {/* <ChildComponent 
 
             //Pros
             name = {this.state.fname}
             age = {'25'}
             Job = {this.state.arrayJob}
-            />
-			
-			<ChildLoopComponent
-			Job = {this.state.arrayJob}
-			/>
+            /> */}
             </>
         )
     }

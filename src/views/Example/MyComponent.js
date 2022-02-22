@@ -1,48 +1,50 @@
 import React from "react";
+import LoginName from "./LoginName";
+import InputLogin from './InputLogin';
+import ListJob from "./ListJob";
 
 class MyComponent extends React.Component {
-    
-    // State
+    // state
     state = {
-        name: 'Quang ND',
-        age: 27
-    }
+        // Outputting Lists
+        arrayJob: [
+            {id: 1, title: 'developer', salary: '500'},
+            {id: 2, title: 'tester', salary: '200'},
+            {id: 3, title: 'BA', salary: '1000'}
+        ]
+    }   
 
-    // setState
-    onChangeName = (event) => {
-        this.setState({
-            name: event.target.value
+    //function pros
+    addNewJob = (job) => {
+        // console.log('list: ', job);
+        let currenJobs = this.state.arrayJob;
+        currenJobs.push(job);
+        this.setState({  
+            // arrayJob: [...this.state.arrayJob, job]
+            arrayJob: currenJobs
         })
     }
 
-    onChangeAge = (event) => {
+    //delete job
+    deleteJob = (job) => {
+        let currenJobs = this.state.arrayJob;
+        currenJobs = currenJobs.filter(item => item.id !== job.id)
         this.setState({
-            age: event.target.value
+            arrayJob: currenJobs
         })
     }
-    
     render() {
-        // JSX
-        let name = 'AHT';
-
         return ( 
             //Sử dụng thẻ ẩn bao quanh 2 thẻ chính
             <>
-                {/* call jsx */}
-                <div className="first"> Hello {name} </div>
-                <div className="secord"> {name} JSC </div>
-
-                <div className="info-input">
-                    <input value={this.state.name} type="text"
-                        onChange={(event) => this.onChangeName(event)}
-                    />
-                    <input value={this.state.age} type="number" 
-                        onChange={(event) => this.onChangeAge(event)}
-                    />
-                </div>
-
-                {/* call state */}
-                <div className="title">Name: {this.state.name}, Age: {this.state.age}</div>
+                {/* <LoginName /> */}
+				<InputLogin 
+                    addNewJob = {this.addNewJob}
+                />
+                <ListJob
+                    Job = {this.state.arrayJob}
+                    deleteJob = {this.deleteJob}
+                />
             </>
         )
     }

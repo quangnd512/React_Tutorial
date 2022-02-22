@@ -1,6 +1,6 @@
 import React from "react";
 
-class ChildLoopComponent extends React.Component {
+class ListJob extends React.Component {
 
     // State bool
     state = {
@@ -13,6 +13,12 @@ class ChildLoopComponent extends React.Component {
             showJob: !this.state.showJob
         })
     } 
+
+    //Delete data
+    eventDelete = (job) => {
+        // console.log(job)
+        this.props.deleteJob(job)
+    }
     render() {
         let { Job } = this.props;
         let { showJob } = this.state;
@@ -32,7 +38,7 @@ class ChildLoopComponent extends React.Component {
 							Job.map(( item, index )=>{
 								return (
 									<div key={item.id}>
-										{item.title} - {item.salary} $
+										{item.title} - {item.salary} $ <span onClick={() => this.eventDelete(item)}>x</span>
 									</div>
 								)
 							})
@@ -46,4 +52,4 @@ class ChildLoopComponent extends React.Component {
     };
 }
 
-export default ChildLoopComponent;
+export default ListJob;
