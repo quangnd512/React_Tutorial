@@ -1,4 +1,5 @@
 import React from "react";
+import "./ChildComponent";
 
 // Stateless: Không có state
 // StateFull: Có state
@@ -48,7 +49,7 @@ const ChildComponent = (props) => {
 						Job.map(( item, index )=>{
 							return (
 								<div key={item.id}>
-									{item.title} - {item.salary}
+									{item.title} - {item.salary} $
 								</div>
 							)
 						})

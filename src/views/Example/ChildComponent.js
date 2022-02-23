@@ -1,4 +1,5 @@
 import React from "react";
+import "./ChildComponent.scss";
 
 // Stateless: Không có state
 // StateFull: Có state
